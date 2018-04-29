@@ -2376,7 +2376,26 @@ public class HTMLEditor extends JPanel {
 		 */
 
 		HTML.Tag tag = null;
-
+//TASK 2-1 SMELL WITHIN A CLASS’		
+		if(sel == T_P)
+			tag = HTML.Tag.P;
+		if(sel == T_H1)
+			tag = HTML.Tag.H1;
+		if(sel == T_H2)
+			tag = HTML.Tag.H2;
+		if(sel == T_H3)
+			tag = HTML.Tag.H3;
+		if(sel == T_H4)
+			tag = HTML.Tag.H4;
+		if(sel == T_H5)
+			tag = HTML.Tag.H5;	
+		if(sel == T_H6)
+			tag = HTML.Tag.H6;	
+		if(sel == T_PRE)
+			tag = HTML.Tag.PRE;
+		if(sel == T_BLOCKQ)
+			tag = HTML.Tag.BLOCKQUOTE;		
+		/*
 		switch (sel) {
 			case T_P :
 				tag = HTML.Tag.P;
@@ -2402,13 +2421,11 @@ public class HTMLEditor extends JPanel {
 			case T_PRE :
 				tag = HTML.Tag.PRE;
 				break;
-				/*
-				 * case T_ADDRESS : tag = HTML.Tag.ADDRESS;
-				 */
+
 			case T_BLOCKQ :
 				tag = HTML.Tag.BLOCKQUOTE;
 				break;
-		}
+		} */
 
 		Element el = document.getParagraphElement(editor.getCaretPosition());
 		if (el.getName().toUpperCase().equals("P-IMPLIED")) {
@@ -2721,7 +2738,7 @@ public class HTMLEditor extends JPanel {
 		 *  
 		 */
 
-	}
+	} 
 
 	public void setDocument(Document doc) {
 		this.document = (HTMLDocument) doc;
@@ -2756,9 +2773,11 @@ public class HTMLEditor extends JPanel {
 		editorKit.setStyleSheet(css);
 	}
 	
+//TASK 2-2 SMELL BETWEEN CLASSES - Duplicate class	
+	/*
 	public void reload() {	
 		
-	}
+	} */
 
 	void doFind() {
 		FindDialog dlg = new FindDialog();
